@@ -1,11 +1,11 @@
 {
+    "private": true,
     "name": "guideline-electron-react",
     "version": "0.2.0",
     "author": "W3LabKr",
     "description": "",
     "main": "./public/electron.js",
     "homepage": "./",
-    "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^13.3.0",
@@ -28,8 +28,8 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "electron:start": "concurrently -k \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-        "electron:build": "yarn build && electron-builder -mw"
+        "dev": "concurrently -k \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+        "dist": "yarn build && electron-builder -mw"
     },
     "eslintConfig": {
         "extends": [

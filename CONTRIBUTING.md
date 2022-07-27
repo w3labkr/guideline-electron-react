@@ -1,4 +1,4 @@
-# CONTRIBUTIN GUIDE
+# Contributing Guide
 
 ## Create react application
 
@@ -22,18 +22,14 @@ yarn add electron-is-dev
 ```
 
 ```shell
-yarn electron:build
-```
-
-```shell
-yarn electron:start
+yarn dev
 ```
 
 ```json
 {
     "scripts": {
-        "electron:start": "concurrently -k \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-        "electron:build": "yarn build && electron-builder -mw"
+        "dev": "concurrently -k \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+        "dist": "yarn build && electron-builder -mw"
     },
 }
 ```
