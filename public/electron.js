@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+const isDev = require('electron-is-dev')
 
 function createWindow() {
     const mainWindow = new BrowserWindow({
@@ -11,12 +12,12 @@ function createWindow() {
     })
 
     mainWindow.loadURL(
-      app.isPackaged
-        ? `file://${path.join(__dirname, '../build/index.html')}`
-        : 'http://localhost:3000'
+      isDev
+        ? 'http://localhost:3000'
+        : `file://${path.join(__dirname, '../build/index.html')}`
     );
 
-    // mainWindow.webContents.openDevTools();
+    // isDev && mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {

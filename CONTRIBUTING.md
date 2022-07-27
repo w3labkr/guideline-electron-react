@@ -4,19 +4,29 @@
 
 ```shell
 npx create-react-app .
+```
+
+```shell
 npm run build
+```
+
+```shell
 npm start
 ```
 
 ## Create electron application
 
 ```shell
-npm i --save-dev electron electron-builder concurrently wait-on
-npm i cross-env
+yarn add --dev electron electron-builder cross-env concurrently wait-on
+yarn add electron-is-dev
 ```
 
 ```shell
-npm run electron:start
+yarn electron:build
+```
+
+```shell
+yarn electron:start
 ```
 
 ```json
