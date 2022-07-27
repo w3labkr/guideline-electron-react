@@ -1,0 +1,60 @@
+productName: guideline-electron-react
+appId: com.example.com
+
+asar: true
+
+files:
+  - build/**/*
+  - node_modules/**/*
+
+directories:
+  buildResources: ./build/
+  output: ./dist/
+  app: .
+
+mac:
+  darkModeSupport: true
+  target: dmg
+
+dmg:
+  title: ${productName}
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+        - ia32
+
+nsis:
+  # Whether to create one-click installer or assisted.
+  oneClick: false
+
+  # Whether to show install mode installer page (choice per-machine or per-user) for assisted installer.
+  # Or whether installation always per all users (per-machine).
+  perMachine: true
+
+  # assisted installer only. Whether to allow user to change installation directory.
+  allowToChangeInstallationDirectory: false
+
+  # The uninstaller display name in the control panel.
+  uninstallDisplayName: ${productName} ${version}
+
+  # The artifact file name template.
+  artifactName: ${productName} Setup ${version}.${ext}.
+
+  # The installer languages (e.g. en_US, de_DE).
+  # Change only if you understand what do you do and for what.
+  installerLanguages:
+    - en_US
+    - ko_KR
+
+  # defaults to 1033(English - United States).
+  language: 1042
+
+  # Whether to create desktop shortcut.
+  # Set to always if to recreate also on reinstall (even if removed by user).
+  createDesktopShortcut: true
+
+  # The name that will be used for all shortcuts. Defaults to the application name.
+  shortcutName: ${productName}
